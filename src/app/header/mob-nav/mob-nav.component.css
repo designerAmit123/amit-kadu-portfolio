@@ -1,0 +1,212 @@
+ul{
+  margin: 0;
+  padding: 0;
+}
+.navigation {
+  position: relative;
+  background-color: var(--first-color);
+  width: 470px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  display: none;
+}
+
+.navigation ul {
+  display: flex;
+  width: 420px;
+}
+
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--container-color);
+}
+
+.navigation ul li.active a .icon {
+  transform: translateY(-35px);
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  color: var(--container-color);
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.indicator {
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background-color: var(--first-color-alt);
+  border-radius: 50%;
+  border: 6px solid var(--body-color);
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 1px -10px 0 0 var(--body-color);
+  ;
+}
+
+.indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: -1px -10px 0 0 var(--body-color);
+}
+
+.navigation ul li:nth-child(1).active~.indicator {
+  transform: translateX(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active~.indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active~.indicator {
+  transform: translateX(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active~.indicator {
+  transform: translateX(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active~.indicator {
+  transform: translateX(calc(70px * 4));
+}
+
+.navigation ul li:nth-child(6).active~.indicator {
+  transform: translateX(calc(70px * 5));
+}
+@media only screen and (max-width: 600px) {
+  .navigation {
+    /* width: 375px; */
+    display: flex;
+    width: 100vw;
+    height: 56px;
+    border-radius: 0px;
+    position: fixed;
+    bottom: 0;
+  }
+
+  .navigation ul {
+    width: 336px;
+  }
+
+  .navigation ul li {
+    width: 56px;
+    height: 56px;
+  }
+
+  .indicator {
+    width: 56px;
+    height: 56px;
+    border: 5px solid var(--body-color);
+  }
+
+  .navigation ul li:nth-child(1).active~.indicator {
+    transform: translateX(calc(56px * 0));
+  }
+
+  .navigation ul li:nth-child(2).active~.indicator {
+    transform: translateX(calc(56px * 1));
+  }
+
+  .navigation ul li:nth-child(3).active~.indicator {
+    transform: translateX(calc(56px * 2));
+  }
+
+  .navigation ul li:nth-child(4).active~.indicator {
+    transform: translateX(calc(56px * 3));
+  }
+
+  .navigation ul li:nth-child(5).active~.indicator {
+    transform: translateX(calc(56px * 4));
+  }
+
+  .navigation ul li:nth-child(6).active~.indicator {
+    transform: translateX(calc(56px * 5));
+  }
+
+  .indicator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -21px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 18px;
+    box-shadow: 1px -10px 0 0 var(--body-color);
+    ;
+  }
+
+  .indicator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -21px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 18px;
+    box-shadow: -1px -10px 0 0 var(--body-color);
+  }
+
+  .navigation ul li a .icon {
+    line-height: 56px;
+  }
+
+  .navigation ul li.active a .icon {
+    transform: translateY(-27px);
+  }
+}
