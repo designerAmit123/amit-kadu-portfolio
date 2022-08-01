@@ -1,0 +1,15 @@
+.home-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.home-img{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+.home-blob{
+  width: 400px;
+  fill: var(--first-color);
+}
